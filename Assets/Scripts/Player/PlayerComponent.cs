@@ -8,11 +8,10 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   [field: SerializeField]
   public float NewLightDuration { get; set; } = 10f;
 
-  private Rigidbody2D rb;
-
   public PlayerState State { get; set; }
 
-  private bool isTouchingLight;
+  private Rigidbody2D rb;
+  private TorchComponent torch;
 
   public void Awake() {
     this.rb = this.GetComponent<Rigidbody2D>();
@@ -29,11 +28,22 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
     this.State.Velocity = this.rb.velocity;
     this.State.LightDuration = Mathf.Max(this.State.LightDuration - Time.deltaTime, 0);
     this.BroadcastMessage("SetLight", this.State.LightDuration);
+
+    if (this.torch != null && Input.GetKey(this.torch.InteractKey)) {
+      if (this.torch.TakeLight()) {
+        this.State.LightDuration = this.NewLightDuration;
+        this.torch = null;
+      }
+    }
   }
 
-  public void OnTriggerStay2D(Collider2D collision) {
+  public void OnTriggerEnter2D(Collider2D collision) {
     if (collision.gameObject.tag == "Torch")
-      this.State.LightDuration = this.NewLightDuration;
+      this.torch = collision.GetComponent<TorchComponent>();
+  }
+
+  public void OnTriggerExit2D(Collider2D collision) {
+    if (collision.gameObject.tag == "Torch") this.torch = null;
   }
 
   public void Beat() {
