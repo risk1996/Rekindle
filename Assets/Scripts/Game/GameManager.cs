@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 [RequireComponent(typeof(PersistenceService<GameState>))]
@@ -12,19 +13,21 @@ public class GameManager : MonoBehaviour {
   [field: SerializeField]
   public PlayerComponent Player;
 
+  [field: SerializeField]
+  public PersistenceSettings PersistenceSettings { get; set; } = new PersistenceSettings();
+
   public void Awake() {
     Assert.IsNotNull(this.Player);
-  }
-
-  public void Start() {
     this.persistence = new PersistenceService<GameState>();
-    this._state = this.persistence.Load();
+    this._state = this.PersistenceSettings.Load ? this.persistence.Load() : new GameState();
     Assert.IsNotNull(this._state);
     this.Player.State = this._state.Player;
   }
 
   public void Update() {
-    Assert.IsNotNull(this._state);
-    this.persistence.Save(this._state);
+    if (this.PersistenceSettings.Save) {
+      Assert.IsNotNull(this._state);
+      this.persistence.Save(this._state);
+    }
   }
 }

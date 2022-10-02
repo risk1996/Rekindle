@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
@@ -20,6 +19,7 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   }
 
   public void Start() {
+    Assert.IsNotNull(this.State);
     this.rb.position = this.State.Position;
     this.rb.velocity = this.State.Velocity;
   }

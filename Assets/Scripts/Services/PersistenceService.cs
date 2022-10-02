@@ -8,9 +8,9 @@ public class PersistenceService<TData> where TData : new() {
   public string SaveKey { get; set; } = "GAME_SAVE";
 
   public TData Load() {
-    return /* JsonUtility.FromJson<TData>(
+    return JsonUtility.FromJson<TData>(
       PlayerPrefs.GetString(this.SaveKey)
-    ) ?? */ new TData();
+    ) ?? new TData();
   }
 
   public void Save(TData data) {
