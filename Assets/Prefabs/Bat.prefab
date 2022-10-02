@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 956827002, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: <Duration>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1442879786628779358, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_GravityScale
       value: 0

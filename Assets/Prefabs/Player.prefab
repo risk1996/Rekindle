@@ -122,7 +122,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6499996, y: 2.0499997}
+  m_ConnectedAnchor: {x: 0.6500001, y: 2.0500002}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!58 &5037545675856432380
@@ -364,7 +364,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.10000038, y: 2.1}
+  m_ConnectedAnchor: {x: 0.099999905, y: 2.1}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &9060182851016781313
@@ -632,7 +632,7 @@ FixedJoint2D:
   m_ConnectedRigidBody: {fileID: 1661460710}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 0
@@ -711,7 +711,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 6.4
   m_Material: {fileID: 6200000, guid: 0bb932cbc09cb4d9f9b70f714d00f3e8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -730,7 +730,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 1.65}
+  m_Offset: {x: 0.052352667, y: 1.6500001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -741,7 +741,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 2.5}
+  m_Size: {x: 0.8790641, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &969685451
 MonoBehaviour:
@@ -756,11 +756,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <JumpSpecification>k__BackingField:
-    <Duration>k__BackingField: 3
-    <LiftoffFrameCount>k__BackingField: 2
-    <AirborneFrameCount>k__BackingField: 18
+    <Duration>k__BackingField: 1
+    <LiftoffFrameCount>k__BackingField: 4
+    <AirborneFrameCount>k__BackingField: 60
     <LandingFrameCount>k__BackingField: 4
-  <Speed>k__BackingField: {x: 2, y: 9.5}
+  <Speed>k__BackingField: {x: 8, y: 25}
 --- !u!114 &969685452
 MonoBehaviour:
   m_ObjectHideFlags: 0

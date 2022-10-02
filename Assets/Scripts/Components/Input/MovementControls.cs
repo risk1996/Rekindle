@@ -49,7 +49,10 @@ public class MovementControls : MonoBehaviour {
       ) {
         this.jumpForceApplied = true;
         velocity.y = this.Speed.y;
-      }
+      } else if (
+        this.jumpCountdown <= this.JumpSpecification.LandingStartTime ||
+        this.jumpCountdown > this.JumpSpecification.AirborneStartTime
+      ) velocity.x = 0;
 
       this.jumpCountdown -= Time.deltaTime;
 

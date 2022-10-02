@@ -6,7 +6,7 @@ using UnityEngine;
 public class Debuffer : MonoBehaviour {
 
   [field: SerializeField]
-  public float Duration { get; set; } = 2.0f;
+  public float Duration { get; set; } = 1.0f;
   [field: SerializeField]
   public float Force { get; set; } = 10.0f;
 
@@ -23,6 +23,7 @@ public class Debuffer : MonoBehaviour {
 
   public void OnTriggerEnter2D(Collider2D collision) {
     if (collision.gameObject.tag == "Player") {
+      collision.gameObject.GetComponent<MovementControls>().enabled = false;
       this.target = collision.gameObject;
       this.target.SendMessageUpwards("TransitionTo", MovementState.Bound);
       this.targetRb = this.target.GetComponent<Rigidbody2D>();
@@ -30,6 +31,12 @@ public class Debuffer : MonoBehaviour {
       this.collisionDirection = this.rb.transform.position.x < this.targetRb.position.x
         ? HorizontalDirection.Left
         : HorizontalDirection.Right;
+    }
+  }
+
+  public void OnTriggerExit2D(Collider2D collision) {
+    if (collision.gameObject.tag == "Player") {
+      collision.gameObject.GetComponent<MovementControls>().enabled = true;
     }
   }
 
