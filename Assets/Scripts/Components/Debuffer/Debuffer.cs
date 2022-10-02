@@ -24,6 +24,7 @@ public class Debuffer : MonoBehaviour {
   public void OnTriggerEnter2D(Collider2D collision) {
     if (collision.gameObject.tag == "Player") {
       this.target = collision.gameObject;
+      this.target.SendMessageUpwards("TransitionTo", MovementState.Bound);
       this.targetRb = this.target.GetComponent<Rigidbody2D>();
       this.duration = 0;
       this.collisionDirection = this.rb.transform.position.x < this.targetRb.position.x
@@ -32,13 +33,11 @@ public class Debuffer : MonoBehaviour {
     }
   }
 
-  public void OnTriggerExit2D(Collider2D collision) {
-  }
-
   public void Update() {
     if (this.target != null) {
       this.duration += Time.deltaTime;
       if (this.duration >= this.Duration) {
+        this.target.SendMessageUpwards("TransitionTo", MovementState.Idle); // TODO Change to Running?
         this.target = null;
         this.targetRb.velocity = 2 * this.Force * new Vector2(
           this.collisionDirection == HorizontalDirection.Left ? -1 : 1,

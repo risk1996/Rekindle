@@ -130,34 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 969685451, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: <JumpDuration>k__BackingField
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 969685451, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: <SpeedMultiplier>k__BackingField.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 969685451, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: <SpeedMultiplier>k__BackingField.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1661460710, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1661460710, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2828480028723062059, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2828480028723062059, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9060182851522864032, guid: 7608ae12647f53648bfab6c2c937c93c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -41936,7 +41908,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708239229}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
