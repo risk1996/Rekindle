@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HorizontalFace : MonoBehaviour {
   [SerializeField] public HorizontalDirection DefaultDirection = HorizontalDirection.Right;
+  [SerializeField] public float Threshold = 0.1f;
 
   private Rigidbody2D rb;
 
@@ -12,7 +13,7 @@ public class HorizontalFace : MonoBehaviour {
   }
 
   public void Update() {
-    if (Mathf.Abs(this.rb.velocity.x) < 0.01f) return;
+    if (Mathf.Abs(this.rb.velocity.x) < this.Threshold) return;
 
     HorizontalDirection currentDirection = this.rb.velocity.x < 0
       ? HorizontalDirection.Left
