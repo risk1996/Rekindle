@@ -17,11 +17,16 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   public void Start() {
     this.rb.position = this.State.Position;
     this.rb.velocity = this.State.Velocity;
+    this.BroadcastMessage("Rekindle", this.State.LightDuration);
   }
 
   public void Update() {
     this.State.Position = this.rb.position;
     this.State.Velocity = this.rb.velocity;
+  }
+
+  public void DimLight(float by) {
+    this.State.LightDuration -= by;
   }
 
   public void Beat() {
