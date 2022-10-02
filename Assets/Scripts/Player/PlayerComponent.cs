@@ -6,9 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
 
+  [field: SerializeField]
+  public float NewLightDuration { get; set; } = 10f;
+
   private Rigidbody2D rb;
 
   public PlayerState State { get; set; }
+
+  private bool isTouchingLight;
 
   public void Awake() {
     this.rb = this.GetComponent<Rigidbody2D>();
@@ -17,16 +22,18 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   public void Start() {
     this.rb.position = this.State.Position;
     this.rb.velocity = this.State.Velocity;
-    this.BroadcastMessage("Rekindle", this.State.LightDuration);
   }
 
   public void Update() {
     this.State.Position = this.rb.position;
     this.State.Velocity = this.rb.velocity;
+    this.State.LightDuration = Mathf.Max(this.State.LightDuration - Time.deltaTime, 0);
+    this.BroadcastMessage("SetLight", this.State.LightDuration);
   }
 
-  public void DimLight(float by) {
-    this.State.LightDuration -= by;
+  public void OnTriggerStay2D(Collider2D collision) {
+    if (collision.gameObject.tag == "Torch")
+      this.State.LightDuration = this.NewLightDuration;
   }
 
   public void Beat() {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-
+[RequireComponent(typeof(Renderer))]
 public class PlayerLight : MonoBehaviour {
 
   [field: SerializeField]
@@ -18,17 +18,8 @@ public class PlayerLight : MonoBehaviour {
     this.fireSpriteRenderer = this.GetComponent<Renderer>();
   }
 
-  public void Update() {
-    this.SendMessageUpwards("DimLight", Time.deltaTime);
-
-    Vector3 scale = this.LightCirle.transform.localScale;
-    float newScale = Mathf.Max(scale.x - Time.deltaTime, 0);
-    this.LightCirle.transform.localScale = new Vector3(newScale, newScale, 0);
-
-    this.fireSpriteRenderer.enabled = newScale >= this.FireSpriteExtinguishThreshold;
-  }
-
-  public void Rekindle(float to) {
+  public void SetLight(float to) {
+    this.fireSpriteRenderer.enabled = to >= this.FireSpriteExtinguishThreshold;
     this.LightCirle.transform.localScale = new Vector3(to, to, 0);
   }
 }

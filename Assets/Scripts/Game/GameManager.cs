@@ -10,18 +10,17 @@ public class GameManager : MonoBehaviour {
   private PersistenceService<GameState> persistence;
 
   [field: SerializeField]
-  public GameObject PlayerObject;
+  public PlayerComponent Player;
 
   public void Awake() {
-    this.PlayerObject = GameObject.FindGameObjectWithTag("Player");
-    Assert.IsNotNull(this.PlayerObject);
+    Assert.IsNotNull(this.Player);
   }
 
   public void Start() {
     this.persistence = new PersistenceService<GameState>();
     this._state = this.persistence.Load();
     Assert.IsNotNull(this._state);
-    this.PlayerObject.GetComponent<IPlayer>().State = this._state.Player;
+    this.Player.State = this._state.Player;
   }
 
   public void Update() {
