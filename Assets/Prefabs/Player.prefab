@@ -122,7 +122,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6499996, y: 2.0499997}
+  m_ConnectedAnchor: {x: 0.6499996, y: 2.05}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!58 &5037545675856432380
@@ -241,7 +241,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000011920929, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!50 &7305571120698842749
@@ -295,7 +295,6 @@ GameObject:
   - component: {fileID: 9060182851016781316}
   - component: {fileID: 9060182851016781315}
   - component: {fileID: 7179396215712941166}
-  - component: {fileID: 1281713091}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -412,24 +411,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!255 &1281713091
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060182851016781313}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 1661460710}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1 &9060182851310111618
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +554,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05722928, y: 1.6171688}
+  m_Offset: {x: -0.05722928, y: 1.6317064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -584,7 +565,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0939403, y: 2.5475814}
+  m_Size: {x: 1.0939403, y: 2.5185063}
   m_EdgeRadius: 0
 --- !u!255 &87535590
 FixedJoint2D:
@@ -694,12 +675,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8275ef9ab349e403eb8929a40db896d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpeedMultiplier>k__BackingField: {x: 5, y: 3}
+  PlayerAnimator: {fileID: 9060182851522864033}
+  BodyAnimator: {fileID: 9060182851310111620}
+  FireAnimator: {fileID: 9060182851016781315}
+  <SpeedMultiplier>k__BackingField: {x: 10, y: 5}
   <JumpSpecifications>k__BackingField:
   - <Height>k__BackingField: 2.5
-    <Duration>k__BackingField: 0.5
+    <Duration>k__BackingField: 0.8
   - <Height>k__BackingField: 2.5
-    <Duration>k__BackingField: 0.5
+    <Duration>k__BackingField: 0.8
 --- !u!114 &969685452
 MonoBehaviour:
   m_ObjectHideFlags: 0
