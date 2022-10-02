@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Environment
+  - Torch
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Detector
   - Enemy
   - Debuffer
-  - 
+  - Torch
   - 
   - 
   - 
