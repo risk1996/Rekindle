@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 2517192874706618591}
   - component: {fileID: 956827002}
   - component: {fileID: 2781866889048459463}
+  - component: {fileID: 1511337650234337991}
   m_Layer: 9
   m_Name: Body
   m_TagString: Enemy
@@ -337,6 +338,20 @@ MonoBehaviour:
   <AvoidLightSpeed>k__BackingField: 4
   <AvoidLightDuration>k__BackingField: 2
   Line: {fileID: 1639064710}
+--- !u!114 &1511337650234337991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226631915791348334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07e58b1e57b6446b971022c469bde30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxBPMIncrease>k__BackingField: 50
+  OutsideIlluminationThreshold: 0.3
 --- !u!1 &2226631915902829203
 GameObject:
   m_ObjectHideFlags: 0

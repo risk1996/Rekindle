@@ -11,6 +11,7 @@ public class PlayerLight : MonoBehaviour {
   [field: SerializeField]
   public GameObject LightCirle { get; set; }
 
+  private Vector3 originalLightScale;
   private Vector2 originalLightTransform;
   private SpriteRenderer fireSpriteRenderer;
 
@@ -20,6 +21,7 @@ public class PlayerLight : MonoBehaviour {
   }
 
   public void Start() {
+    this.originalLightScale = this.LightCirle.transform.localScale;
     this.originalLightTransform = this.LightCirle.transform.localPosition;
   }
 
@@ -30,6 +32,6 @@ public class PlayerLight : MonoBehaviour {
 
   public void SetLight(float to) {
     this.fireSpriteRenderer.enabled = to >= this.FireSpriteExtinguishThreshold;
-    this.LightCirle.transform.localScale = new Vector3(to, to, 0);
+    this.LightCirle.transform.localScale = new Vector3(originalLightScale.x * to / 10, originalLightScale.y * to / 10, 0);
   }
 }

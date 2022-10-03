@@ -21,12 +21,12 @@ public class PlayerVision : MonoBehaviour, IThreatTarget {
   }
 
   public void OnTriggerEnter2D(Collider2D collider) {
-    if (collider.gameObject.tag == "Monster")
+    if (collider.gameObject.tag == "Enemy")
       this.monstersInSight.Add(collider.gameObject);
   }
 
   public void OnTriggerExit2D(Collider2D collider) {
-    if (collider.gameObject.tag == "Monster")
+    if (collider.gameObject.tag == "Enemy")
       this.monstersInSight.Remove(collider.gameObject);
   }
 
@@ -35,10 +35,20 @@ public class PlayerVision : MonoBehaviour, IThreatTarget {
   }
 
   public Circle VisionCircle {
-    get { return new Circle(this.visionCollider.transform.position, this.visionCollider.radius); }
+    get {
+      return new Circle(
+        this.visionCollider.transform.position,
+        this.visionCollider.transform.localScale.x * this.visionCollider.radius
+      );
+    }
   }
 
   public Circle LightCircle {
-    get { return new Circle(this.lightCollider.transform.position, this.lightCollider.radius); }
+    get {
+      return new Circle(
+        this.lightCollider.transform.position,
+        this.lightCollider.transform.localScale.x * this.lightCollider.radius
+      );
+    }
   }
 }

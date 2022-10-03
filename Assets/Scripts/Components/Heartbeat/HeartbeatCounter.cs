@@ -18,6 +18,9 @@ public class HeartbeatCounter : MonoBehaviour {
   [field: SerializeField]
   public GameObject Vision { get; set; }
 
+  [field: SerializeField]
+  public Animator HeartbeatAnimator { get; set; }
+
   private IBeater beater;
   private IThreatTarget target;
   private float currentBPM;
@@ -25,10 +28,15 @@ public class HeartbeatCounter : MonoBehaviour {
   private float elapsedTime = 0f;
 
   public void Awake() {
+    Assert.IsNotNull(this.HeartbeatAnimator);
+
     Assert.IsNotNull(this.Beater);
     this.beater = this.Beater.GetComponent<IBeater>();
+    Assert.IsNotNull(this.beater);
+
     Assert.IsNotNull(this.Vision);
     this.target = this.Vision.GetComponent<IThreatTarget>();
+    Assert.IsNotNull(this.target);
   }
 
   public void Start() {
@@ -46,13 +54,16 @@ public class HeartbeatCounter : MonoBehaviour {
       this.MaxBPM
     );
 
-    Debug.Log(this.currentBPM);
-    Debug.Log(this.beatPeriod);
+    this.HeartbeatAnimator.speed = 1 / this.beatPeriod;
 
     if (this.elapsedTime >= this.beatPeriod) {
       this.elapsedTime -= this.beatPeriod;
       this.beater.Beat();
     }
+  }
+
+  public float CurrentBPM {
+    get { return this.currentBPM; }
   }
 }
 

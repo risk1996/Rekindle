@@ -2,7 +2,6 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 public class Threat : MonoBehaviour {
 
   [field: SerializeField]
@@ -14,18 +13,8 @@ public class Threat : MonoBehaviour {
     get { return 1 - this.OutsideIlluminationThreshold; }
   }
 
-  private Transform tf;
-
-  public void Awake() {
-    this.tf = this.GetComponent<Transform>();
-  }
-
   public float CalculateBPMIncrease(IThreatTarget target) {
-    Vector2 threatPosition = new Vector2(
-      this.tf.position.x,
-      this.tf.position.y
-    );
-
+    Vector2 threatPosition = this.transform.position;
     LineSegment threatToVision = new LineSegment(threatPosition, target.VisionCircle.Origin);
 
     if (threatToVision.Length >= target.VisionCircle.Radius) return 0f;
