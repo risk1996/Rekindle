@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour {
   public void Update() {
     if (this.PersistenceSettings.Save) {
       Assert.IsNotNull(this._state);
-      this.persistence.Save(this._state);
+      if (PersistenceSettings.Save) {
+        this.persistence.Save(this._state);
+      }
     }
   }
 }

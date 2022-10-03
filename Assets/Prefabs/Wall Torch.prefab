@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6034179217314871517}
   - component: {fileID: 3381562766389286135}
   - component: {fileID: 5359734307389660789}
+  - component: {fileID: 9020482855499958307}
   m_Layer: 10
   m_Name: Fire
   m_TagString: Torch
@@ -123,6 +124,24 @@ CircleCollider2D:
   m_Offset: {x: 0.05, y: 2.05}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &9020482855499958307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421035011419010456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b9cd3c9c17426b953fd5c9374ac40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <State>k__BackingField:
+    RemainingUsage: 3
+    MaxUsage: 3
+    MaxLightSourceRadius: 3
+  InteractKey: 102
+  <LightSpriteMask>k__BackingField: {fileID: 1611562451883768841}
 --- !u!1 &3438995346850249025
 GameObject:
   m_ObjectHideFlags: 0

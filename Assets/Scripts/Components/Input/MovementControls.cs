@@ -61,6 +61,10 @@ public class MovementControls : MonoBehaviour {
     else this.TransitionTo(MovementState.Idle);
 
     this.rb.velocity = velocity;
+
+    if (Input.GetAxisRaw("Horizontal") == 0) {
+      this.rb.velocity = new Vector3(0f, this.rb.velocity.y);
+    }
   }
 
   private static readonly HashSet<(MovementState, MovementState)> stateTransitions =
