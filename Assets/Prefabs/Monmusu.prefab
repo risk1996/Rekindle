@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5408841573672128232, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d91bd47f6bb1174484a9cd2cf38e04f, type: 3}
+    - target: {fileID: -1568724400931056591, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d91bd47f6bb1174484a9cd2cf38e04f, type: 3}
+    - target: {fileID: -1568724400931056591, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1568724400931056591, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1568724400931056591, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1420364014, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_Size.x
       value: 1.8953564

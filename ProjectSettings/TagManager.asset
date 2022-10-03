@@ -9,6 +9,7 @@ TagManager:
   - Torch
   - Light
   - AudioSources
+  - GameOver
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Masked
     uniqueID: 2569861019
+    locked: 0
+  - name: Panels
+    uniqueID: 3913214937
     locked: 0

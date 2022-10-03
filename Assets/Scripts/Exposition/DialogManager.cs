@@ -37,8 +37,11 @@ public class DialogManager : MonoBehaviour {
         this.sentenceIndex += 1;
         this.UpdateDisplay();
 
-        if (this.sentenceIndex == this.targetSentence.Length)
+        if (this.sentenceIndex == this.targetSentence.Length) {
           this.timeoutCountdown = this.timeout;
+          AudioController.AudioStop(AudioName.Dialogue);
+        }
+
       }
     } else if (this.timeoutCountdown > 0) {
       this.timeoutCountdown -= Time.deltaTime;
@@ -61,6 +64,7 @@ public class DialogManager : MonoBehaviour {
     this.targetSentence = text;
     this.sentenceIndex = 1;
     this.UpdateDisplay();
+    AudioController.AudioCustomLoop(AudioName.Dialogue, 0, 0);
   }
 
   public void SayMultiple(string[] texts) {

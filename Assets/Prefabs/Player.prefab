@@ -1046,6 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <NewLightDuration>k__BackingField: 10
+  <Origin>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!81 &6493732516454159830
 AudioListener:
   m_ObjectHideFlags: 0

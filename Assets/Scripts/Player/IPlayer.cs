@@ -1,6 +1,5 @@
 using System;
 
 public interface IPlayer {
-
-  public PlayerState State { get; set; }
+    public PlayerState State { get; set; }
 }

@@ -25,18 +25,8 @@ public class AudioController : MonoBehaviour {
   void Start() {
     audioSources = GameObject.FindGameObjectWithTag("AudioSources").GetComponents<AudioSource>();
   }
-
   // Update is called once per frame
   void Update() {
-    delay -= Time.deltaTime;
-    if (delay < 0) {
-      AudioPlay(AudioName.BGM);
-      AudioPlayMultiple(new (AudioName, float)[] {
-        (AudioName.HeartBeat_A, 0f), (AudioName.HeartBeat_B, 0.5f)
-      });
-
-    }
-    
   }
 
   public static void AudioPlay(AudioName audioName) {
@@ -44,6 +34,13 @@ public class AudioController : MonoBehaviour {
     if (!clip.isPlaying) {
       clip.Play();
     }
+  }
+
+  public static void AudioCustomPlay(AudioName audioName, float customStartTime = 0f, float customEndTime = 0f) {
+    AudioSource clip = AudioController.audioSources.First(source => source.clip.name == audioName.ToString());
+    clip.time = customStartTime;
+    clip.Play();
+    clip.SetScheduledEndTime(AudioSettings.dspTime + (customEndTime - customStartTime));
   }
 
   public static void AudioCustomLoop(AudioName audioName, float customLoopStartTime = 0f, float customLoopEndTime = 0f) {

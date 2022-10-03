@@ -1,6 +1,8 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PersistenceService<GameState>))]
 public class GameManager : MonoBehaviour {
@@ -31,5 +33,10 @@ public class GameManager : MonoBehaviour {
         this.persistence.Save(this._state);
       }
     }
+  }
+
+  public void GameOver() {
+    AudioController.AudioCustomPlay(AudioName.Fall, 4f, customEndTime: 5.5f);
+    Player.transform.position = new Vector3(Player.Origin.x, Player.Origin.y, Player.Origin.z);
   }
 }

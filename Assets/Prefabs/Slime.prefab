@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1881033671446930252, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a312eaae12600164dad3b5093819c825, type: 3}
+    - target: {fileID: 1881033671446930252, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1966832017280453267, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Controller
       value: 
@@ -15,6 +23,10 @@ PrefabInstance:
       propertyPath: DefaultDirection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4958441674293937765, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a312eaae12600164dad3b5093819c825, type: 3}
     - target: {fileID: 6249639907003170746, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: <AvoidLightSpeed>k__BackingField
       value: 0

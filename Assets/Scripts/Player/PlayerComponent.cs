@@ -8,6 +8,9 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   [field: SerializeField]
   public float NewLightDuration { get; set; } = 10f;
 
+  [field: SerializeField]
+  public Vector3 Origin { get; set; } = Vector3.zero;
+
   public PlayerState State { get; set; }
 
   private ExpositionManager exposition;
