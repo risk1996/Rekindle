@@ -41,6 +41,8 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   public void OnTriggerEnter2D(Collider2D collision) {
     if (collision.gameObject.tag == "Torch")
       this.torch = collision.GetComponent<TorchComponent>();
+    else if (collision.gameObject.tag == "Enemy")
+      this.SendMessage("Say", "Ouch?");
   }
 
   public void OnTriggerExit2D(Collider2D collision) {

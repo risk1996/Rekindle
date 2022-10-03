@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6c8ad55ef8a7b194483d63a2990874c7, type: 2}
+    - target: {fileID: 4502720982018874022, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: DefaultDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6249639907003170746, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: <AvoidLightSpeed>k__BackingField
       value: 0

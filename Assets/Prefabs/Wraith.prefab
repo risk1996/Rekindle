@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3879050336403398428}
   - component: {fileID: 3879050336403398429}
   - component: {fileID: 3879050336403398430}
+  - component: {fileID: 5276613531316896493}
   m_Layer: 8
   m_Name: Wraith
   m_TagString: Untagged
@@ -269,6 +270,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5276613531316896493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879050336403398431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8ddfa0d9ef4402a9980c8637f1880b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultDirection: 1
+  Threshold: 0.1
+  Renderers:
+  - {fileID: 3879050336168949991}
+  - {fileID: 3879050336941395422}
 --- !u!1 &3879050336941395410
 GameObject:
   m_ObjectHideFlags: 0

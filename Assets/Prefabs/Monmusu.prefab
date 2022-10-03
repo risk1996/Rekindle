@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: <AvoidLightSpeed>k__BackingField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5646638378386337243, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: DefaultDirection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2226631916628895111, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
     - {fileID: 2226631915791348328, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}

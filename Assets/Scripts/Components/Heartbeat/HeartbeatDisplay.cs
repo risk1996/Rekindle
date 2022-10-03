@@ -1,19 +1,18 @@
-﻿using System.Collections;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(TMPro.TextMeshProUGUI))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class HeartbeatDisplay : MonoBehaviour {
 
-  private TMPro.TextMeshProUGUI display;
+  private TextMeshProUGUI display;
   private IBeater beater;
 
   [field: SerializeField]
   public GameObject Beater { get; set; }
 
   public void Awake() {
-    this.display = this.GetComponent<TMPro.TextMeshProUGUI>();
+    this.display = this.GetComponent<TextMeshProUGUI>();
     Assert.IsNotNull(this.Beater);
     this.beater = this.Beater.GetComponent<IBeater>();
   }

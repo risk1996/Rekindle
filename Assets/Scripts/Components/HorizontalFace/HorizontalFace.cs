@@ -1,10 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class HorizontalFace : MonoBehaviour {
-  [SerializeField] public HorizontalDirection DefaultDirection = HorizontalDirection.Right;
-  [SerializeField] public float Threshold = 0.1f;
+
+  [field: SerializeField]
+  public HorizontalDirection DefaultDirection = HorizontalDirection.Right;
+
+  [field: SerializeField]
+  public float Threshold = 0.1f;
+
+  [field: SerializeField]
+  public List<SpriteRenderer> Renderers = new List<SpriteRenderer>();
 
   private Rigidbody2D rb;
 
@@ -20,9 +28,8 @@ public class HorizontalFace : MonoBehaviour {
       : HorizontalDirection.Right;
 
     bool isReversed = currentDirection != this.DefaultDirection;
-    Quaternion rotation = this.transform.rotation;
-    rotation.y = isReversed ? 180 : 0;
-    this.transform.rotation = rotation;
+
+    foreach (SpriteRenderer r in this.Renderers) r.flipX = isReversed;
   }
 }
 
