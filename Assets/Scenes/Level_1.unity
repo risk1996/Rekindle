@@ -2701,7 +2701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 621951698}
   <PersistenceSettings>k__BackingField:
-    Load: 1
+    Load: 0
     Save: 1
 --- !u!4 &1517999426
 Transform:
@@ -2902,8 +2902,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1682150051}
   - component: {fileID: 1682150050}
-  - component: {fileID: 1682150049}
   - component: {fileID: 1682150052}
+  - component: {fileID: 1682150053}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2911,14 +2911,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1682150049
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682150048}
-  m_Enabled: 1
 --- !u!20 &1682150050
 Camera:
   m_ObjectHideFlags: 0
@@ -2995,6 +2987,19 @@ MonoBehaviour:
   CameraOffset: {x: 3.5, y: 3}
   MinimumPoint: {x: -5, y: -1}
   MaximumPoint: {x: 450, y: 17}
+--- !u!114 &1682150053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682150048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48cfd8140dc49047a654622c17772a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourcePrefab: {fileID: 1804851625182246373, guid: 23240fd6c474ccc41a7844fbf4637987, type: 3}
 --- !u!1 &1690775708
 GameObject:
   m_ObjectHideFlags: 0

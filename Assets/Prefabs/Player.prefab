@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 969685451}
   - component: {fileID: 969685452}
   - component: {fileID: 621951698}
+  - component: {fileID: 6493732516454159830}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -788,3 +789,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <NewLightDuration>k__BackingField: 10
+--- !u!81 &6493732516454159830
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060182851522864032}
+  m_Enabled: 1
