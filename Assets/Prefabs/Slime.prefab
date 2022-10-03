@@ -53,15 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 221.602
+      value: 93.028046
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.892
+      value: -4.13
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.20387691
+      value: 0.40775383
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93,7 +93,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503854, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079461373912994811, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079461373912994811, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079461373912994814, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: <Speed>k__BackingField
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8079461374264737683, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Size.x
