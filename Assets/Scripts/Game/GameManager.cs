@@ -41,17 +41,20 @@ public class GameManager : MonoBehaviour {
   public void OnApplicationQuit() {
     if (this.PersistenceSettings.Save) {
       Assert.IsNotNull(this._state);
-      if (PersistenceSettings.Save) {
-        this.persistence.Save(this._state);
-      }
+      this.persistence.Save(this._state);
     }
   }
 
   public void GameOver() {
-    AudioController.AudioCustomPlay(AudioName.Fall, 4f, customEndTime: 5.5f);
     Player.transform.position = new Vector3(Player.Origin.x, Player.Origin.y, Player.Origin.z);
-
     this._state.Day += 1;
+    Player.ResetState();
+    foreach (TorchComponent torch in this.torches) torch.ResetState();
+  }
+
+  public void GameWon() {
+    Player.transform.position = new Vector3(Player.Origin.x, Player.Origin.y, Player.Origin.z);
+    this._state.Day = 1;
     Player.ResetState();
     foreach (TorchComponent torch in this.torches) torch.ResetState();
   }
