@@ -18,7 +18,8 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   }
 
   public void Start() {
-    Assert.IsNotNull(this.State);
+    if (this.State == null) this.State = new PlayerState();
+
     this.rb.position = this.State.Position;
     this.rb.velocity = this.State.Velocity;
   }

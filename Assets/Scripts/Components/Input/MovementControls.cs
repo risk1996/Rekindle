@@ -14,7 +14,7 @@ public class MovementControls : MonoBehaviour {
   public JumpSpecification JumpSpecification { get; set; } =
     new JumpSpecification(3f, 2, 18, 4);
 
-  private MovementState state;
+  private MovementStep state;
   private float jumpCountdown; // NOTE: < 0 not jumping
   private bool jumpForceApplied;
 
@@ -24,11 +24,11 @@ public class MovementControls : MonoBehaviour {
   public void Start() {
     this.animator = this.GetComponent<Animator>();
     this.rb = this.GetComponent<Rigidbody2D>();
-    this.TransitionTo(MovementState.Idle);
+    this.TransitionTo(MovementStep.Idle);
   }
 
   public void Update() {
-    if (this.state == MovementState.Bound) return;
+    if (this.state == MovementStep.Bound) return;
 
     float horizontalMovement = Input.GetAxisRaw("Horizontal");
     Vector2 velocity = new Vector2(
@@ -39,7 +39,7 @@ public class MovementControls : MonoBehaviour {
     bool isJumping = this.jumpCountdown >= 0;
     bool willJump = Input.GetKeyDown(KeyCode.Space);
 
-    if (!isJumping && willJump) this.TransitionTo(MovementState.Jumping);
+    if (!isJumping && willJump) this.TransitionTo(MovementStep.Jumping);
 
     else if (isJumping) {
       if (
@@ -56,9 +56,9 @@ public class MovementControls : MonoBehaviour {
 
       this.jumpCountdown -= Time.deltaTime;
 
-      if (this.jumpCountdown < 0) this.TransitionTo(MovementState.Idle);
-    } else if (horizontalMovement != 0) this.TransitionTo(MovementState.Running);
-    else this.TransitionTo(MovementState.Idle);
+      if (this.jumpCountdown < 0) this.TransitionTo(MovementStep.Idle);
+    } else if (horizontalMovement != 0) this.TransitionTo(MovementStep.Running);
+    else this.TransitionTo(MovementStep.Idle);
 
     this.rb.velocity = velocity;
 
@@ -67,21 +67,21 @@ public class MovementControls : MonoBehaviour {
     }
   }
 
-  private static readonly HashSet<(MovementState, MovementState)> stateTransitions =
-    new HashSet<(MovementState, MovementState)> {
-      (MovementState.Idle, MovementState.Bound),
-      (MovementState.Idle, MovementState.Running),
-      (MovementState.Idle, MovementState.Jumping),
-      (MovementState.Bound, MovementState.Idle), // TODO Change to Running?
-      (MovementState.Running, MovementState.Idle),
-      (MovementState.Running, MovementState.Bound),
-      (MovementState.Running, MovementState.Jumping),
-      (MovementState.Jumping, MovementState.Idle),
-      (MovementState.Jumping, MovementState.Bound),
-      (MovementState.Jumping, MovementState.Running),
+  private static readonly HashSet<(MovementStep, MovementStep)> stateTransitions =
+    new HashSet<(MovementStep, MovementStep)> {
+      (MovementStep.Idle, MovementStep.Bound),
+      (MovementStep.Idle, MovementStep.Running),
+      (MovementStep.Idle, MovementStep.Jumping),
+      (MovementStep.Bound, MovementStep.Idle), // TODO Change to Running?
+      (MovementStep.Running, MovementStep.Idle),
+      (MovementStep.Running, MovementStep.Bound),
+      (MovementStep.Running, MovementStep.Jumping),
+      (MovementStep.Jumping, MovementStep.Idle),
+      (MovementStep.Jumping, MovementStep.Bound),
+      (MovementStep.Jumping, MovementStep.Running),
     };
 
-  public void TransitionTo(MovementState state) {
+  public void TransitionTo(MovementStep state) {
     if (!MovementControls.stateTransitions.Contains((this.state, state)))
       return;
 
@@ -92,25 +92,25 @@ public class MovementControls : MonoBehaviour {
     this.animator.ResetTrigger("Jumping");
 
     switch (state) {
-      case MovementState.Idle: {
+      case MovementStep.Idle: {
           this.animator.SetTrigger("Idle");
           this.jumpCountdown = -float.Epsilon;
           this.jumpForceApplied = false;
           break;
         }
-      case MovementState.Bound: {
+      case MovementStep.Bound: {
           this.animator.SetTrigger("Bound");
           this.jumpCountdown = -float.Epsilon;
           this.jumpForceApplied = false;
           break;
         }
-      case MovementState.Running: {
+      case MovementStep.Running: {
           this.animator.SetTrigger("Running");
           this.jumpCountdown = -float.Epsilon;
           this.jumpForceApplied = false;
           break;
         }
-      case MovementState.Jumping: {
+      case MovementStep.Jumping: {
           this.animator.SetTrigger("Jumping");
           this.jumpCountdown = this.JumpSpecification.Duration;
           this.jumpForceApplied = false;

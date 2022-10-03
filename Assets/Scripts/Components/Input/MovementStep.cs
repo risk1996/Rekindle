@@ -1,4 +1,4 @@
-﻿public enum MovementState {
+﻿public enum MovementStep {
   Idle,
   Bound,
   Running,
