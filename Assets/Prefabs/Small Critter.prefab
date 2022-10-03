@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1639064706}
   - component: {fileID: 1639064710}
-  - component: {fileID: 1639064707}
   - component: {fileID: 1639064712}
   m_Layer: 8
   m_Name: Pathway
@@ -98,9 +97,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -116,13 +115,13 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -133,20 +132,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 1
---- !u!114 &1639064707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639064705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8539d907534c847feb518d25e109187f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 1
-  MovingBody: {fileID: 1442879786628779358}
 --- !u!50 &1639064712
 Rigidbody2D:
   serializedVersion: 4
@@ -182,6 +167,7 @@ GameObject:
   - component: {fileID: 1442879786628779358}
   - component: {fileID: 2517192874706618591}
   - component: {fileID: 956827002}
+  - component: {fileID: 2781866889048459463}
   m_Layer: 9
   m_Name: Body
   m_TagString: Enemy
@@ -334,7 +320,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Duration>k__BackingField: 1
-  <Force>k__BackingField: 10
+  <Force>k__BackingField: 25
+--- !u!114 &2781866889048459463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226631915791348334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8539d907534c847feb518d25e109187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 1
+  <AvoidLightSpeed>k__BackingField: 4
+  <AvoidLightDuration>k__BackingField: 2
+  Line: {fileID: 1639064710}
 --- !u!1 &2226631915902829203
 GameObject:
   m_ObjectHideFlags: 0

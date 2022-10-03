@@ -1,0 +1,17 @@
+{
+  "MonsterAvoidLight": [
+    "Seems that some of them are scared of light."
+  ],
+  "MonsterEncounter": [
+    "Those are scary as heck. Best to avoid them."
+  ],
+  "TorchApproach": [
+    "Press F to rekindle torch"
+  ],
+  "TorchFirstTimeExtinguished": [
+    "Uh-oh im scared. My heart can't take this"
+  ],
+  "TorchSecondTimeRekindle": [
+    "Seems like i only have 10 seconds before the fire runs out."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "CutScene": [
+    ". . ."
+  ],
+  "Intro": [
+    "I have a limited heartbeat",
+    "I must not feel things that makes my heart race",
+    "Even in my dream, i must not"
+  ],
+  "Lose": [
+    "That's okay. Lets try again tomorrow.",
+    "Day 2"
+  ],
+  "Win": [
+    "I managed to preserve my heart somehow",
+    "That was scary but it's not anymore",
+    "Oh well,",
+    "One fear at a time"
+  ]
+}

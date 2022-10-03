@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4285715
       objectReference: {fileID: 0}
+    - target: {fileID: 1639064707, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: <AvoidLightSpeed>k__BackingField
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1639064710, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.53382874
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 344961ba54ad3f6479e2c6ecdd5b4c17, type: 3}
     - target: {fileID: 2226631915902829203, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_Name
-      value: 6
+      value: Monmusu
       objectReference: {fileID: 0}
     - target: {fileID: 2226631915902829212, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_RootOrder
@@ -89,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2226631915902829212, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.194496
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2226631915902829212, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14340091
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 2226631915902829212, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -135,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 630401d644bcb7d4d9267027333bed9b, type: 2}
+    - target: {fileID: 2781866889048459463, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
+      propertyPath: <AvoidLightSpeed>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2226631916628895111, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}
     - {fileID: 2226631915791348328, guid: d06499d7cc6da6c4780cc6f1a08faf01, type: 3}

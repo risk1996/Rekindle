@@ -4,8 +4,13 @@ using UnityEngine.Assertions;
 
 public class TorchComponent : MonoBehaviour {
 
+  public TorchState State { get; set; }
+
   [field: SerializeField]
-  public TorchState State { get; set; } = new TorchState();
+  public Int32 MaxUsage { get; set; } = 3;
+
+  [field: SerializeField]
+  public float MaxLightSourceRadius { get; set; } = 3f;
 
   [field: SerializeField]
   public KeyCode InteractKey = KeyCode.F;
@@ -13,21 +18,22 @@ public class TorchComponent : MonoBehaviour {
   [field: SerializeField]
   private SpriteMask LightSpriteMask { get; set; }
 
-
   private Renderer renderer;
 
   public void Start() {
-    Assert.IsNotNull(this.State);
+    if (this.State == null) this.State = new TorchState();
+    this.State.RemainingUsage = Math.Min(this.State.RemainingUsage, this.MaxUsage);
+
     Assert.IsNotNull(this.LightSpriteMask);
     this.renderer = this.GetComponent<Renderer>();
   }
 
   public void Update() {
-    float ratio = this.State.UsageRatio;
+    float ratio = 1f * this.State.RemainingUsage / this.MaxUsage;
     Color color = this.renderer.material.color;
     color.a = ratio;
     this.renderer.material.color = color;
-    float lightSourceSize = ratio * this.State.MaxLightSourceRadius;
+    float lightSourceSize = ratio * this.MaxLightSourceRadius;
     this.LightSpriteMask.transform.localScale = new Vector3(lightSourceSize, lightSourceSize, 0);
   }
 

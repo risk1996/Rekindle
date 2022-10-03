@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6c8ad55ef8a7b194483d63a2990874c7, type: 2}
+    - target: {fileID: 6249639907003170746, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: <AvoidLightSpeed>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7431507240865219357, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Size.x
       value: 1.3775024
@@ -53,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.028046
+      value: -0.60083723
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.13
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503841, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93,7 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982233133855503854, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Name
-      value: 8
+      value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982233133855503854, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8079461373912994811, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Positions.Array.data[0].x
@@ -106,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 8079461373912994814, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: <Speed>k__BackingField
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079461373912994814, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
+      propertyPath: <AvoidLightSpeed>k__BackingField
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8079461374264737683, guid: f7319bb986ced714eb1ff39f51e2d1d6, type: 3}
       propertyPath: m_Size.x
