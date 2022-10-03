@@ -10,10 +10,12 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
 
   public PlayerState State { get; set; }
 
+  private ExpositionManager exposition;
   private Rigidbody2D rb;
   private TorchComponent torch;
 
   public void Awake() {
+    this.exposition = GameManager.FindObjectOfType<ExpositionManager>();
     this.rb = this.GetComponent<Rigidbody2D>();
   }
 
@@ -30,19 +32,28 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
     this.State.LightDuration = Mathf.Max(this.State.LightDuration - Time.deltaTime, 0);
     this.BroadcastMessage("SetLight", this.State.LightDuration);
 
+    if (this.State.LightDuration <= 0) {
+      this.exposition.Dispatch(ExpositionType.Dialog, "TorchFirstTimeExtinguished", true);
+    }
+
     if (this.torch != null && Input.GetKey(this.torch.InteractKey)) {
       if (this.torch.TakeLight()) {
+        this.State.RekindleCount += 1;
         this.State.LightDuration = this.NewLightDuration;
         this.torch = null;
+
+        if (this.State.RekindleCount == 2)
+          this.exposition.Dispatch(ExpositionType.Dialog, "TorchSecondTimeRekindle", true);
       }
     }
   }
 
   public void OnTriggerEnter2D(Collider2D collision) {
-    if (collision.gameObject.tag == "Torch")
+    if (collision.gameObject.tag == "Torch") {
       this.torch = collision.GetComponent<TorchComponent>();
-    else if (collision.gameObject.tag == "Enemy")
-      this.SendMessage("Say", "Ouch?");
+      this.exposition.Dispatch(ExpositionType.Dialog, "TorchApproach", true);
+    } else if (collision.gameObject.tag == "Enemy")
+      this.exposition.Dispatch(ExpositionType.Dialog, "MonsterEncounter", true);
   }
 
   public void OnTriggerExit2D(Collider2D collision) {

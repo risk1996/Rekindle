@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-[RequireComponent(typeof(Renderer))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerLight : MonoBehaviour {
 
   [field: SerializeField]
@@ -11,11 +11,21 @@ public class PlayerLight : MonoBehaviour {
   [field: SerializeField]
   public GameObject LightCirle { get; set; }
 
-  private Renderer fireSpriteRenderer;
+  private Vector2 originalLightTransform;
+  private SpriteRenderer fireSpriteRenderer;
 
   public void Awake() {
     Assert.IsNotNull(this.LightCirle);
-    this.fireSpriteRenderer = this.GetComponent<Renderer>();
+    this.fireSpriteRenderer = this.GetComponent<SpriteRenderer>();
+  }
+
+  public void Start() {
+    this.originalLightTransform = this.LightCirle.transform.localPosition;
+  }
+
+  public void Update() {
+    this.LightCirle.transform.localPosition =
+      this.originalLightTransform * new Vector2(this.fireSpriteRenderer.flipX ? -1 : 1, 1);
   }
 
   public void SetLight(float to) {

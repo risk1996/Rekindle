@@ -17,10 +17,12 @@ public class EnemyMovement : MonoBehaviour {
   [field: SerializeField]
   public LineRenderer Line;
 
+  private ExpositionManager exposition;
   private Rigidbody2D rb;
 
   public void Awake() {
     Assert.IsNotNull(this.Line);
+    this.exposition = GameManager.FindObjectOfType<ExpositionManager>();
     this.rb = this.GetComponent<Rigidbody2D>();
   }
 
@@ -30,6 +32,7 @@ public class EnemyMovement : MonoBehaviour {
 
   public void Update() {
     if (this.State.AvoidDuration > 0) {
+      this.exposition.Dispatch(ExpositionType.Dialog, "MonsterAvoidLight", true);
       this.State.AvoidDuration -= Time.deltaTime;
       this.rb.velocity = this.State.AvoidVelocity;
 
