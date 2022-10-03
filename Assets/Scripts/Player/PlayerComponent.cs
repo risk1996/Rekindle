@@ -68,4 +68,10 @@ public class PlayerComponent : MonoBehaviour, IPlayer, IBeater {
   }
 
   public UInt32 BeatRemainder { get { return this.State.HeartbeatCount; } }
+
+  public void ResetState() {
+    this.State.Position = new Vector2();
+    this.State.Velocity = new Vector2();
+    this.State.LightDuration = 10f;
+  }
 }

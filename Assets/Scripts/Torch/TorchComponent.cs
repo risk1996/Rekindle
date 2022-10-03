@@ -21,7 +21,7 @@ public class TorchComponent : MonoBehaviour {
   private Renderer renderer;
 
   public void Start() {
-    if (this.State == null) this.State = new TorchState();
+    Assert.IsNotNull(this.State);
     this.State.RemainingUsage = Math.Min(this.State.RemainingUsage, this.MaxUsage);
 
     Assert.IsNotNull(this.LightSpriteMask);
@@ -35,6 +35,10 @@ public class TorchComponent : MonoBehaviour {
     this.renderer.material.color = color;
     float lightSourceSize = ratio * this.MaxLightSourceRadius;
     this.LightSpriteMask.transform.localScale = new Vector3(lightSourceSize, lightSourceSize, 0);
+  }
+
+  public void ResetState() {
+    this.State.RemainingUsage = this.MaxUsage;
   }
 
   public bool TakeLight() {
